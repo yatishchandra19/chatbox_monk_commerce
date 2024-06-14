@@ -1,4 +1,5 @@
 export const data = [
+  { blah },
   {
     userId: "user1",
     name: "Sam",
