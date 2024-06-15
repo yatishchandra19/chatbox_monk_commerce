@@ -52,7 +52,7 @@ export const data = [
   {
     userId: "user2",
     name: "Elon",
-    unreadCount: 0,
+    unreadCount: 2,
     profilePictureURL:
       "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     chat: [
