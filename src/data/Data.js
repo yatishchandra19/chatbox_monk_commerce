@@ -7,7 +7,7 @@ export const data = [
       "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     chat: [
       {
-        user1: {
+        user: {
           message: "Hello",
           timeStamp: "10:40",
         },
@@ -17,7 +17,7 @@ export const data = [
         },
       },
       {
-        user1: {
+        user: {
           message: "How are you doing?",
           timeStamp: "10:41",
         },
@@ -27,7 +27,7 @@ export const data = [
         },
       },
       {
-        user1: {
+        user: {
           message: "great",
           timeStamp: "10:44",
         },
@@ -37,7 +37,7 @@ export const data = [
         },
       },
       {
-        user1: {
+        user: {
           message: "Oh yes. There is no way i am going to miss that.",
           timeStamp: "10:44",
         },
@@ -57,7 +57,7 @@ export const data = [
       "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     chat: [
       {
-        user2: {
+        user: {
           message: "there?",
           timeStamp: "11:39",
         },
@@ -67,7 +67,7 @@ export const data = [
         },
       },
       {
-        user2: {
+        user: {
           message: "movie tomorrow?",
           timeStamp: "11:49",
         },
@@ -77,7 +77,7 @@ export const data = [
         },
       },
       {
-        user2: {
+        user: {
           message: "the new mad max movie. Reviews are great.",
           timeStamp: "11:52",
         },
@@ -96,7 +96,7 @@ export const data = [
       "https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg",
     chat: [
       {
-        user2: {
+        user: {
           message: "that burger was delicious!",
           timeStamp: "13:12",
         },
@@ -106,7 +106,7 @@ export const data = [
         },
       },
       {
-        user2: {
+        user: {
           message: "We are definetely going to that place again.",
           timeStamp: "13:13",
         },
@@ -116,7 +116,7 @@ export const data = [
         },
       },
       {
-        user2: {
+        user: {
           message: "haha, I bet. Lets take Tony and Natasha too next time",
           timeStamp: "13:14",
         },

@@ -5,24 +5,30 @@ import { data } from "./data/Data";
 
 function App() {
   const [contacts, setContacts] = useState(data);
-  const [selectedContact, setSelectedContact] = useState(null);
+  const [selectedContact, setSelectedContact] = useState(contacts[0]);
   const [unreadContacts, setUnreadContacts] = useState([]);
 
   const handleSelectContact = (contactId) => {
     const contact = contacts.find((contact) => contact.userId === contactId);
     if (contact) {
       setSelectedContact(contact);
-      // console.log("pressed");
-      // setUnreadContacts(
-      //   unreadContacts.filter((current) => (current !== contactId && current)
-      // );
+      console.log("pressed");
+      setUnreadContacts(
+        unreadContacts.filter((current) => current !== contactId && current)
+      );
     }
   };
 
+  const handleBackToContacts = () => {
+    setSelectedContact(null);
+  };
+
   return (
-    <div className="App grid grid-cols-4 h-screen bg-white">
+    <div className="App flex flex-col md:flex-row h-screen bg-white ">
       <div
-        className="col-span-1 h-full p-5"
+        className={`md:w-1/4 h-full p-5 border-gray-200 ${
+          selectedContact ? "hidden md:block" : "block"
+        }`}
         style={{ borderRight: "1px solid #EFEFEF" }}>
         <ContactList
           contacts={contacts}
@@ -33,9 +39,14 @@ function App() {
           setUnreadContacts={setUnreadContacts}
         />
       </div>
-      <div className="col-span-3 h-full">
-        <Conversation selectedContact={selectedContact} />
-      </div>
+      {selectedContact && (
+        <div className="flex-grow h-full">
+          <Conversation
+            selectedContact={selectedContact}
+            onBack={handleBackToContacts}
+          />
+        </div>
+      )}
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../index.css";
 import Modal from "./Model";
+import "../fonts.css";
 
 import { ReactComponent as Dots } from "../icons/dots.svg";
 
@@ -28,9 +29,6 @@ function Contact({
 
   return (
     <div
-      onClick={() => {
-        onSelectContact(userId);
-      }}
       style={{
         backgroundColor:
           selectedContact && selectedContact.userId === userId
@@ -39,19 +37,26 @@ function Contact({
         position: "relative",
       }}
       className="py-2 px-2 flex items-center space-x-3 mb-2 rounded ">
-      <img src={dp} className="h-14 w-14 rounded-full flex-shrink-0 "></img>
-      <div className="flex-grow">
+      <img
+        onClick={() => {
+          onSelectContact(userId);
+        }}
+        src={dp}
+        className="h-14 w-14 rounded-full flex-shrink-0 "></img>
+      <div className="flex-grow min-w-0">
         <p
-          className="font-semibold text-base"
-          style={{
-            fontFamily: "-apple-system, BlinkMacSystemFont, sans-serif",
-          }}>
+          onClick={() => {
+            onSelectContact(userId);
+          }}
+          className="SFProText font-semibold text-base">
           {name}
         </p>
         <p
-          className="font-normal h-6 overflow-clip text-sm"
+          onClick={() => {
+            onSelectContact(userId);
+          }}
+          className="font-normal h-6 overflow-clip text-sm truncate"
           style={{
-            fontFamily: "-apple-system, BlinkMacSystemFont, sans-serif",
             color: "#8E8E93",
           }}>
           {latestMessage}
@@ -89,13 +94,19 @@ function ContactList({
 }) {
   const [showModel, setShowModel] = useState(null);
 
+  console.log(selectedContact);
+
   function handleDeleteContact(contactId) {
     setContacts(contacts.filter((contact) => contact.userId !== contactId));
   }
 
   return (
     <div className="">
-      <div className="font-normal font-sans text-xl leading-6">Chats</div>
+      <div
+        className="font-normal text-xl leading-6"
+        style={{ fontFamily: "Source Sans Pro" }}>
+        Chats
+      </div>
       <div className="py-2 ">
         {contacts.map((contact) => (
           <Contact
